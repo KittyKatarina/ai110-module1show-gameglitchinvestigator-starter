@@ -41,16 +41,28 @@ such as "8" > "75" would return true, since "String comparison is lexicographic 
 the "8" > "7" is being compared, which would return true even though its false for "8" > "75"
 
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
+
 The AI suggested the Go higher and Go lower hints were switched, however after reviewing I was able to verify that the logic should be correct, as when a guess is higher or lower, the correct messages were in the correct logical place. The AI was misleading in the idea that the logic was incorrect, however I did identified two error messages that looked correct but the actual English was wrong, as they were "Too low, go lower" and "Too high, go higher" which have the second parts of the statements switched. The AI was incorrect about the logic being wrong however missed the incorrect message statements.
+
+When creating the pytests the AI also created unrealistic scenarios, where the secret number was negative, or much above 100 when the normal bounds are 1-100. I had to correct the AI and fix when it created misleading ideas. 
 
 ---
 
 ## 3. Debugging and testing your fixes
 
-- How did you decide whether a bug was really fixed?
+- How did you decide whether a bug was really fixed? 
+
+I went ahead and kept both versions of the code incase the changes were not good, and then I went and ran the program to manually test whether the fixes
+were good or not. Most of the time when I tested things the AI was able to find the issue and solve it relatively fast, and always gave very clear and concise explanations.
+
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
+
+I was able to verify that the hints given back were corrected this time, and that the messages were also corrected. I also had the AI fix another portion of the code regarding the new game button, and I was able to verify that the new game button worked after games had finished when previously the button was broken if the game had already finished. The AI actually did create another bug, as now the button only worked when the game had actually finished, and you couldn't create a new game if one was ongoing. I asked it about this and it then saw the issue in the logic. I verified the fix by pressing the new game button manually and starting a new game both when a game is ongoing, finished, and before one has even started.
+
 - Did AI help you design or understand any tests? How?
+
+I had the AI write tests for when the guess is too high, too low, and correct. The AI first tested unrealistic scenarios, where the secret number was negative or out of bounds of the difficulty range, and then also created a test case for the Tuple return structure from the game. I gave the AI another prompt to correct its logic and tests, as well as removing the redundant tests it created regarding the Tuple return structures.
 
 ---
 
