@@ -69,6 +69,7 @@ I had the AI write tests for when the guess is too high, too low, and correct. T
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+Streamlit is a python library that helps us run interactive applications. The "reruns" may be referring to how Streamlit goes through the entire script and reruns everything whenever a button is clicked or when values are entered and changed.
 
 ---
 
@@ -76,5 +77,8 @@ I had the AI write tests for when the guess is too high, too low, and correct. T
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
   - This could be a testing habit, a prompting strategy, or a way you used Git.
+Git was extremely useful when building this project, letting me essentially create "checkpoints" as I worked. I also enjoyed how useful the AI was, both with helpful suggestions as well as suggestions that made me think clearly about what was needed and what was unecessary.
 - What is one thing you would do differently next time you work with AI on a coding task?
+I've learned I need to be more precise when giving prompts to AI. I've learned that being specific can help it both save on tokens, save on how complicated it needs to be as well as not overcomplicate things itself. 
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+AI generated code can definitely be very useful, and overall it actually depends on the developer who reviews it, and how good they are at prompting the AI, catching the mistakes the AI makes, as well as knowing what is necessary and what is unecessary is important as well.
