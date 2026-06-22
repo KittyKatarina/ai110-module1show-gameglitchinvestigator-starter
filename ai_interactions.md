@@ -26,10 +26,23 @@
 
 > Document how you used AI to help generate or improve tests.
 
-| Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
-|-----------|-------------|-------------------|--------------|----------------|
-| | | | | |
-| | | | | |
+| Edge Case | Prompt Used |                       AI-Suggested Test                              | Did It Pass?|            Your Reasoning            |
+|-----------|-------------|---------------------------------------------------------------------|---------------|--------------------------------|
+|Out of bounds| Add new section for edge test cases, testing negative and very large numbers as input| PASSED| When checking the negative numbers and large numbers, they still return the correct hints too low, or too high to the secret |
+
+AI suggested text
+Negative numbers:
+Negative guess that's too low
+Negative guess that's too high (compared to negative secret) 
+
+|Decimal numbers| test decimals as guesses | Not immediately | Decimal numbers can be compared to the secret, and also nothing in the code handles decimals to round, therefore the logic still works. I had to update the AI to not round in the tests|
+
+AI suggested text
+Decimal inputs: Decimal that rounds down and is too high (75.9 → too high) 
+Decimal that rounds down and is too low (40.5 → too low)
+Decimal that rounds to equal the secret (50.3 → win)
+Decimal just below secret (49.9 → too low) 
+
 | | | | | |
 
 ---

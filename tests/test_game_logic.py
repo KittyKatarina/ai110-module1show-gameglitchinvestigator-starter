@@ -79,3 +79,49 @@ class TestCheckGuessTooLow:
         assert outcome == "Too Low"
         assert message == "📈 Go HIGHER!"
 
+
+class TestCheckGuessEdgeCases:
+    """Test cases for edge cases including out of bounds and negative inputs."""
+
+    def test_guess_negative_number_too_low(self):
+        """When guess is negative and less than secret, return Too Low."""
+        outcome, message = check_guess(-10, 50)
+        assert outcome == "Too Low"
+        assert message == "📈 Go HIGHER!"
+
+    def test_guess_out_of_bounds_upwards(self):
+        """When guess exceeds max range (100), return Too High."""
+        outcome, message = check_guess(150, 50)
+        assert outcome == "Too High"
+        assert message == "📉 Go LOWER!"
+
+    def test_guess_far_out_of_bounds_upwards(self):
+        """When guess is far beyond max range, return Too High."""
+        outcome, message = check_guess(1000, 50)
+        assert outcome == "Too High"
+        assert message == "📉 Go LOWER!"
+
+    def test_guess_decimal_rounds_down_too_high(self):
+        """When guess is decimal that rounds down and is still too high."""
+        outcome, message = check_guess(75.9, 50)
+        assert outcome == "Too High"
+        assert message == "📉 Go LOWER!"
+
+    def test_guess_decimal_rounds_down_too_low(self):
+        """When guess is decimal that rounds down and is too low."""
+        outcome, message = check_guess(40.5, 50)
+        assert outcome == "Too Low"
+        assert message == "📈 Go HIGHER!"
+
+    def test_guess_decimal_equals_secret_after_conversion(self):
+        """No decimal rounding when guessing secret number as decimal."""
+        outcome, message = check_guess(50.3, 50)
+        assert outcome == "Too High"
+        assert message == "📉 Go LOWER!"
+
+    def test_guess_decimal_just_below_secret(self):
+        """When decimal guess is just below secret after rounding."""
+        outcome, message = check_guess(49.9, 50)
+        assert outcome == "Too Low"
+        assert message == "📈 Go HIGHER!"
+

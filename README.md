@@ -52,11 +52,11 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 
 ```
 plugins: anyio-4.13.0
-collected 11 items                                                                                                                                                                                
+collected 18 items                                                                                                                       
 
 tests\test_game_logic.py ...........                                                                                                              [100%]
 
-=================================================================== 11 passed in 0.08s ===================================================================
+=================================================================== 18 passed in 0.08s ===================================================================
 ```
 
 ## 🚀 Stretch Features
